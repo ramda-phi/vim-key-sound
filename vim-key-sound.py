@@ -52,8 +52,7 @@ if len(sys.argv) < 2:
     sys.exit(-1)
 
 # if there are no sound source dir, create directory to save sound files
-home = os.path.expanduser('~')
-path = home + "/vks/tmp"
+path = "vks/tmp"
 if os.path.exists(path):
     pass
 else:
