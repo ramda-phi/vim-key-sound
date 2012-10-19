@@ -1,5 +1,4 @@
 import pyo
-import sys
 import time
 
 
@@ -24,7 +23,7 @@ class SinWaveSounder:
                 freq=[self.freq[ccode], self.freq[ccode] + 1],
                 mul=amp).out()
         rec = pyo.Record(osc,
-                filename=self.path + "/" + sys.argv[1] + ".wav",
+                filename=self.path + "/" + self.seed + ".wav",
                 fileformat=0,
                 sampletype=1)
         clean = pyo.Clean_objects(sec, rec)
@@ -32,5 +31,6 @@ class SinWaveSounder:
         time.sleep(sec)
 
     def random_sound(self, seed, sec):
+        self.seed = seed
         ccode = (ord(seed) + 15) % len(self.freq)
         self.sound(ccode, sec)
