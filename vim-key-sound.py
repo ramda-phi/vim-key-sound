@@ -10,7 +10,9 @@ if len(sys.argv) < 2:
     sys.exit(-1)
 
 # if there are no sound source dir, create directory to save sound files
-path = "vks/tmp"
+home = os.environ['HOME']
+# path = home + "path/to/vks/tmp"
+path = home + "/dev/vim-key-sound/vks/tmp"
 if os.path.exists(path):
     pass
 else:
@@ -19,8 +21,6 @@ else:
 
 sec = .1
 filename = path + "/" + sys.argv[1] + ".wav"
-#print '[' + sys.argv[1] + ']'
-#print ord(sys.argv[1])
 
 if os.path.exists(filename):
     import pyaudio
