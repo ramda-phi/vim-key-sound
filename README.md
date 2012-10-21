@@ -20,7 +20,7 @@
 
    [to Use]
 
-    set 'vks/tmp' in your home directory or rewrite variable 'path'
+    set 'vks/tmp' in a directory you want and rewrite variable 'path' in vim-key-sound.py
 
        path = any_dir/you_set
 
